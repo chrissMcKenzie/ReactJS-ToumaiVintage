@@ -8,7 +8,7 @@ function Inscription() {
       <Container>
         <Row className="vh-100 d-flex justify-content-center align-items-center">
           <Col md={8} lg={8} xs={12}>
-            <Card className="px-4" style={{ backgroundColor: "#eacc81" }}>
+            <Card className="px-4" style={{ backgroundColor: "#eacc81",height:'auto' }}>
               <Card.Body>
                 <div className="mb-3 mt-md-4">
                   <h2 className="fw-bold mb-2 text-center text-uppercase ">

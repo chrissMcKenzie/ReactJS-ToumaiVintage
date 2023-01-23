@@ -6,9 +6,9 @@ function Connexion() {
   return (
     <div>
       <Container>
-        <Row className="vh-100 d-flex justify-content-center align-items-center">
-          <Col md={12} lg={10} xs={12} >
-            <Card className="px-4" style={{ backgroundColor: "#eacc81" }}>
+        <Row className="vh-100 d-flex justify-content-center">
+          <Col col-lg-8 col-md-8 col-12 >
+            <Card className="px-4" style={{ backgroundColor: "#eacc81", height:'auto'}}>
               <Card.Body>
                 <div className="mb-3 mt-md-4">
                   <h2 className="fw-bold mb-2 text-center text-uppercase ">
