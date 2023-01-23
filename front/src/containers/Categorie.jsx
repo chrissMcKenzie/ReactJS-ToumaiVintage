@@ -1,9 +1,6 @@
 import React from 'react'
 
-
-
-
-
+import jeuVideo from "../media/images/jeu-vidéo.jpg"
 export default function Categorie({data}) {
   console.log(data)
  
@@ -12,7 +9,7 @@ export default function Categorie({data}) {
       
    <div className="col">
       <div className="card h-100">
-        <img src="../media/images/jeu-vidéo.jpg" className="card-img-top" alt="..."></img>
+        <img src={jeuVideo} className="card-img-top" alt="..."></img>
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
           <p>Prix:15$</p>
