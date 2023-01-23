@@ -1,0 +1,56 @@
+[Trello]
+- https://trello.com/b/FoYpHJGf/e-commerce-matrice
+
+Techno exiger : SQL / ExpressJS / ReactJS
+[Pour la boutique (castorama / decatlon ) :]
+        - Un panier avec la possibilité de rajouter un/ plusieurs objet.s / modifier un objet / le retire du panier
+        - Un système de catégorie / catalogue via le thème choisi par le groupe
+        - Lorsqu’on sélectionne un produit il faut les détails (image, prix, « a propos », nom) + ajout dans le panier
+        - Connexion utilisateur (login / logout) avec mot de passe, nom, date de naissance
+    - Bonus : 
+        - Mettre des produits en avant 
+        - Créer des catégories regroupant d’autre catégorie (produit d’hiver / d’été)
+        - Dark mode
+[Pour le réseaux sociaux :]
+        - Connexion utilisateur (login / logout) avec mot de passe, nom, date de naissance
+        - Une page d’accueil avec un regroupement d’image / vidéo permettant d’être like/dislike, commenté, like le.s commentaire.s
+        - Voir la vidéo avec les commentaires à côté via une Lightbox (avec une croix)
+        - Sur le/un profil, voir les détails (nom d’utilisateur, photo, image/vidéo publiée)
+    - Bonus : 
+        - Un système de messagerie en one to one / one to many / many to many via un autre utilisateur 
+        - Dark mode
+
+[Commands]
+npm install bootstrap react-bootstrap
+
+[PROCESS GIT]
+À la racine du projet
+git status
+git add .
+git status
+git commit -m "Blabla"
+git pull
+git push
+
+[Bootstrap Components]
+export 'default' (imported as 'Button') was not found in 'react-bootstrap' (possible exports:
+Accordion, AccordionButton, AccordionCollapse, AccordionContext, Alert, Anchor, Badge,
+Breadcrumb, BreadcrumbItem, Button, ButtonGroup, ButtonToolbar,
+Card, CardGroup, CardImg, Carousel, CarouselItem, CloseButton, Col, Collapse, Container,
+Dropdown, DropdownButton,
+Fade, Figure, FloatingLabel, Form,
+FormCheck, FormControl, FormFloating, FormGroup, FormLabel, FormSelect, FormText,
+Image, InputGroup,
+ListGroup, ListGroupItem,
+Modal, ModalBody, ModalDialog, ModalFooter, ModalHeader, ModalTitle,
+Nav, NavDropdown, NavItem, NavLink, Navbar, NavbarBrand,
+Offcanvas, OffcanvasBody, OffcanvasHeader, OffcanvasTitle, Overlay, OverlayTrigger,
+PageItem, Pagination, Placeholder, PlaceholderButton, Popover, PopoverBody, PopoverHeader, ProgressBar,
+Ratio, Row,
+SSRProvider, Spinner, SplitButton, Stack,
+Tab, TabContainer, TabContent, TabPane, Table, Tabs, ThemeProvider, Toast, ToastBody, ToastContainer, ToastHeader, ToggleButton, ToggleButtonGroup, Tooltip,
+useAccordionButton)
+
+[Commands Dangereurses]
+git rm -r node_modules
+ - Supprime le dossier <node_modules> de façon récursive à la fois sur Github et en local
