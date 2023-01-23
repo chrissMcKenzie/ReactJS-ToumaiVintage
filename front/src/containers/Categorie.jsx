@@ -1,6 +1,6 @@
 import React from 'react'
 
-import jeuVideo from "../media/images/jeu-vidéo.jpg"
+import JeuVideo from "../media/images/jeu-vidéo.jpg"
 export default function Categorie({data}) {
   console.log(data)
  
