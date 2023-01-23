@@ -6,7 +6,6 @@ import "./AppFooter.css"
 const AppFooter = () => {
   return (
     <footer>
-        AppFooter
         <section>
             <div className='AppLogo'>
                 {/* <a href="/"><img src={logoEscapeGame} style={{width:"100px"}} alt="logo EscapeGame"/></a> */}

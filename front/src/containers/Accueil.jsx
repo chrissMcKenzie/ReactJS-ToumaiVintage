@@ -34,6 +34,7 @@ const filterCat = (categoryItem) =>{
     })
     console.log(result)
     setProductCategories(result)
+
 }
   return (
     <>
@@ -43,7 +44,7 @@ const filterCat = (categoryItem) =>{
       <Row className='row-card'>
 
         <Col md={6} lg={4} className='mb-4 mb-lg-5'>
-          <Link to={`/categorie/${categories[0]}`} style={{ textDecoration: 'none' }} onClick={() => filterCat(categories[0])} >
+          <Link  style={{ textDecoration: 'none' }} onClick={() => filterCat(categories[0])} >
             <Card className="card-1" style={{ height: '13rem'}}>
               <Card.Body className='card-body-overlay d-flex flex-column justify-content-center'>
                 <Card.Title className='text-light fw-bold' style={{fontSize: 45}}>{categories[0]}</Card.Title>

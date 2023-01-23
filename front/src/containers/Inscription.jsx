@@ -6,7 +6,7 @@ function Inscription() {
   return (
     <div>
       <Container>
-        <Row className="vh-100 d-flex justify-content-center align-items-center">
+        <Row className="vh-100 d-flex justify-content-center ">
           <Col md={8} lg={8} xs={12}>
             <Card className="px-4" style={{ backgroundColor: "#eacc81" }}>
               <Card.Body>
