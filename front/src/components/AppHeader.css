@@ -1,29 +1,16 @@
-@font-face {
-    font-family: "Storyboo";
-    /* font-style: normal; */
-    /* font-weight: 400; */
-    src: url('./media/images/fonts/Storyboo.TTF') format('ttf');
-    /* src: local('Storyboo'), url('./media/images/fonts/Storyboo.TTF') format('ttf') format("truetype"); */
-  }
-  
+
   @font-face {
-    font-family: "Rumble Brave";
-    /* font-style: normal; */
-    /* font-weight: 400; */
-    src: url('./media/images/fonts/rumble_brave/RumbleBrave.otf') format('otf');
-    /* src: local('RumbleBrave'), url('./media/images/fonts/rumble_brave/Rumble Brave.otf') format('otf') format("opentype"); */
+    font-family: "Nicolas";
+    src: url('./../media/images/fonts/nicolas_2/Nicolas.ttf') format('ttf') format("truetype");
   }
-  
+
   @font-face {
-    font-family: "Carnival Rimmed";
-    /* font-style: normal; */
-    /* font-weight: 400; */
-    src: url('./media/images/fonts/carnival/CarnivalRimmed.ttf') format('ttf');
-    /* src: local('CarnivalRimmed'), url('./media/images/fonts/carnival/Carnival Rimmed.ttf') format('ttf'), url('./media/images/fonts/carnival/CarnivalMF\ OpenShadow.ttf') format('ttf') format("truetype"); */
+    font-family: "Montaga Regular";
+    src: url('./../media/images/fonts/montaga/Montaga-Regular.ttf') format('ttf') format("truetype");
   }
   
-  .titre{
-    font-family: "Carnival Rimmed";
+  #titre{
+    font-family: "Montaga Regular";
   }
 
 header{
