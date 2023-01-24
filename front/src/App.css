@@ -29,12 +29,41 @@
 
   main{
     padding: 2%;
-    padding-top: 12%; padding-bottom: 20%;
+    padding-top: 150px; padding-bottom: 20%;
     background-color: #f9f7f1;
   }
 
   footer{
     bottom: 0%;
+  }
+
+  
+  .AppLogo{
+    margin-top: -7px;
+    margin-left: 20px;
+    padding: 4px;
+    width: 100px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #f6dbbc, 10px 10px 5px #b78763;
+    transition: box-shadow 0.3s ease-in-out;
+    -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    -o-transition: box-shadow 0.3s ease-in-out 0s;
+    -ms-transition: box-shadow 0.3s ease-in-out 0s;
+  }
+
+  .AppLogo:hover{
+    margin-top: -7px;
+    margin-left: 20px;
+    padding: 4px;
+    width: 100px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 2.5px #f6dbbc, 5px 5px 2.5px #b78763;
+    transition: box-shadow 0.3s ease-in-out;
+    -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    -o-transition: box-shadow 0.3s ease-in-out 0s;
+    -ms-transition: box-shadow 0.3s ease-in-out 0s;
   }
 
 }
@@ -53,23 +82,55 @@
   }
 
   header, footer{
-    
+    z-index: 10;
+    position: fixed;
   }
 
   body{
-    
+    z-index: 0;
+    color: black;
   }
 
   header{
-
+    top: 0%;
   }
 
   main{
-
+    padding: 2%;
+    padding-top: 150px; padding-bottom: 20%;
+    background-color: #f9f7f1;
   }
 
   footer{
+    bottom: 0%;
+  }
 
+  .AppLogo{
+    margin-top: -4px;
+    margin-left: 15px;
+    padding: 3px;
+    width: 90px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #f6dbbc, 10px 10px 5px #b78763;
+    transition: box-shadow 0.3s ease-in-out;
+    -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    -o-transition: box-shadow 0.3s ease-in-out 0s;
+    -ms-transition: box-shadow 0.3s ease-in-out 0s;
+  }
+
+  .AppLogo:hover{
+    margin-top: -4px;
+    margin-left: 15px;
+    padding: 4px;
+    width: 90px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 2.5px #f6dbbc, 5px 5px 2.5px #b78763;
+    transition: box-shadow 0.3s ease-in-out;
+    -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    -o-transition: box-shadow 0.3s ease-in-out 0s;
+    -ms-transition: box-shadow 0.3s ease-in-out 0s;
   }
 
 }
@@ -88,23 +149,55 @@
   }
 
   header, footer{
-    
+    z-index: 10;
+    position: fixed;
   }
 
   body{
-    
+    z-index: 0;
+    color: black;
   }
 
   header{
-
+    top: 0%;
   }
 
   main{
-
+    padding: 2%;
+    padding-top: 150px; padding-bottom: 20%;
+    background-color: #f9f7f1;
   }
 
   footer{
+    bottom: 0%;
+  }
 
+  .AppLogo{
+    margin-top: -5px;
+    margin-left: 15px;
+    padding: 3px;
+    width: 80px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #f6dbbc, 10px 10px 5px #b78763;
+    transition: box-shadow 0.3s ease-in-out;
+    -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    -o-transition: box-shadow 0.3s ease-in-out 0s;
+    -ms-transition: box-shadow 0.3s ease-in-out 0s;
+  }
+
+  .AppLogo:hover{
+    margin-top: -5px;
+    margin-left: 15px;
+    padding: 4px;
+    width: 80px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 2.5px #f6dbbc, 5px 5px 2.5px #b78763;
+    transition: box-shadow 0.3s ease-in-out;
+    -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    -o-transition: box-shadow 0.3s ease-in-out 0s;
+    -ms-transition: box-shadow 0.3s ease-in-out 0s;
   }
 
 }

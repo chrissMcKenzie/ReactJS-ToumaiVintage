@@ -1,4 +1,8 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+
+//* Images
+import logoToumaï from "./../media/images/Logo_Toumaï0.png"
 
 //* pages
 import "./AppFooter.css"
@@ -8,7 +12,9 @@ const AppFooter = () => {
     <footer>
         <section>
             <div className='AppLogo'>
-                {/* <a href="/"><img src={logoEscapeGame} style={{width:"100px"}} alt="logo EscapeGame"/></a> */}
+                <Link to="/">
+                    <img src={logoToumaï} style={{width:"100%", borderRadius: 45}} alt="logo Toumaï"/>
+                </Link> 
             </div>
             <div>
                 {/* <a href="">Home</a>|
