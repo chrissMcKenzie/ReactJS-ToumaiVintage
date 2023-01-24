@@ -79,11 +79,9 @@ function Inscription() {
                         </Form.Group>
 
                         <Form.Group as={Col} className="mb-4" controlId="DateNaissance">
-                          <Form.Label className="text-center">
-                            Date de Naissance
-                          </Form.Label>
+                          <Form.Label className="text-center"> Date de Naissance </Form.Label>
                           <Form.Control type="Date" name="DateDeNaissance" placeholder="Date de Naissance ?"
-                          onChange={updateInput}
+                            onChange={updateInput}
                           />
                         </Form.Group>
                       </Row>
