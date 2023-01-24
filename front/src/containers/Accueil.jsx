@@ -1,9 +1,10 @@
 import React from 'react'
-import {Container, Row, Card, Col, Stack} from 'react-bootstrap';
+import {Container, Row, Card, Col} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "./Accueil.css"
 import products from '../../data';
 import { useState, useEffect } from 'react'
+import Categorie from './Categorie';
 
 const categoryList = products.reduce(function (values, item) {
   if (!values.includes(item.category)) {
@@ -25,6 +26,7 @@ useEffect(() => {
     setCategories(categoryList)
   };
 }, []);
+
   
 
 const filterCat = (categoryItem) =>{
@@ -34,8 +36,9 @@ const filterCat = (categoryItem) =>{
     })
     console.log(result)
     setProductCategories(result)
-
+    return result   
 }
+
   return (
     <>
 
