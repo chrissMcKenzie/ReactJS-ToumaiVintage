@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import {Container, Row, Card, Col} from 'react-bootstrap';
-import { useState, useEffect } from 'react'
 
 //* Pages
 import "./Accueil.css"
