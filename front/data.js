@@ -8,7 +8,7 @@ const products =    [
       category: "Ordinateurs",
     },
     {
-      id: 1,
+      id: 2,
       title: "Labtopoda",
       description: "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",
       price: "78 €",    
@@ -16,7 +16,7 @@ const products =    [
       category: "Ordinateurs",
     },
     {
-      id: 1,
+      id: 3,
       title: "Chaine hihi 400",
       description: "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",
       price: "150 €",    
@@ -24,7 +24,7 @@ const products =    [
       category: "Téléphones",
     },
     {
-      id: 1,
+      id: 4,
       title: "Photo 888",
       description: "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",
       price: "800 €",    
@@ -32,7 +32,7 @@ const products =    [
       category: "Sons et Accessoires",
     },
     {
-      id: 1,
+      id: 5,
       title: "Jeu nint",
       description: "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",
       price: "80 €",    
@@ -40,7 +40,7 @@ const products =    [
       category: "jeux vidéo",
     },
     {
-      id: 1,
+      id: 6,
       title: "Nokia 5522",
       description: "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",
       price: "50 €",    
