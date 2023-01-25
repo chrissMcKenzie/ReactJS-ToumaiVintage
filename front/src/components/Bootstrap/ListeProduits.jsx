@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
-
 import { useParams } from 'react-router-dom'
+
 import products from '../../../data';
-
-
 import JeuVideo from "../../media/images/jeu-vidéo.jpg"
 
 import a from "../../media/images/appareil-photo.jpg";
@@ -20,7 +18,9 @@ const images = {
     e
 }
 // export default images;
-
+// console.log(images);
+// console.log(images2);
+// const ShowImg = images.map(i => i.replaceAll("/src", "../../"))
 
 const ListeProduits =()=> {
   const [productsCategory, setProductsCategory] = useState([]);
