@@ -11,6 +11,31 @@ CREATE TABLE `products` (
     `category` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- Table USERS
+CREATE TABLE `users` (
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `Prénom` varchar(50) NOT NULL,
+    `Nom` varchar(50) NOT NULL,
+    `Sexe` varchar(50) NOT NULL,
+    `Date de Naissance` Date NOT NULL,
+    `Adresse` varchar(250) NOT NULL,
+    `Pays` varchar(50) NOT NULL,
+    `Ville` varchar(50) NOT NULL,
+    `Département` varchar(100) NOT NULL,
+    `Code Postal` INT(8) NOT NULL,
+    `Téléphone` varchar(20) NOT NULL,
+    `Email` varchar(100) NOT NULL,
+    `Mot de Passe` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Table Commande
+CREATE TABLE `ordered`( `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
+    `id_users` INT, FOREIGN KEY (id_users) REFERENCES users(id),
+    `id_products` INT, FOREIGN KEY (id_products) REFERENCES products(id),
+    `Quantite` INT(10) NOT NULL,
+    `Date_Commande` DATE 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 INSERT INTO `products` (`title`, `description`, `price`,`imgSrc`,`category`) VALUES
 ("Bureau 70","Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",70,"media/images/ordibureau4.jpg","Ordinateurs"),
 ("Bureau Labtopoda","Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware", 50,"media/images/ordibureau1.jpeg","Ordinateurs"),
@@ -44,39 +69,9 @@ INSERT INTO `products` (`title`, `description`, `price`,`imgSrc`,`category`) VAL
 ("Fujifilm intax Mini 40", "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware", 70, "media/images/fujifilm.jpeg", "Appareils Photo"),
 ("Camera vintage", "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",150, "media/images/cameravint.jpeg", "Appareils Photo"),
 ("Nokia 5522", "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",50, "media/images/appareiletui.jpeg", "Appareils Photo"),
-("Olympus Pen", "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",90, "media/images/pen.jpeg", "Appareils Photo")
-  
-
-
--- Table USERS
-CREATE TABLE `users` (
-    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `Prénom` varchar(50) NOT NULL,
-    `Nom` varchar(50) NOT NULL,
-    `Sexe` varchar(50) NOT NULL,
-    `Date de Naissance` Date NOT NULL,
-    `Adresse` varchar(250) NOT NULL,
-    `Pays` varchar(50) NOT NULL,
-    `Ville` varchar(50) NOT NULL,
-    `Département` varchar(100) NOT NULL,
-    `Code Postal` INT(8) NOT NULL,
-    `Téléphone` varchar(20) NOT NULL,
-    `Email` varchar(100) NOT NULL,
-    `Mot de Passe` varchar(70) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+("Olympus Pen", "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",90, "media/images/pen.jpeg", "Appareils Photo");
 
 INSERT INTO `users` (`Prénom`,`Nom`,`Sexe`,`Date de Naissance`,`Adresse`,`Pays`,`Ville`, `Département`,`Code Postal`,`Téléphone`,`Email`,`Mot de Passe`) VALUES
 ('Sidi','CISSE','HOMME',"1990-12-24",'15 Square Vaugirard', 'France','Paris','Paris 75','75015',06556677,'balla.rennes@gmail.com','azerty1'),
 ('Mous','SOW','HOMME',"1991-12-24",'15 Square Vaugirard', 'France','Paris','Paris 75','75015',06556688,'mouss.rennes@gmail.com','azerty1'),
-('Mckenzie','Jeaff','HOMME',"1992-12-24",'15 Square Vaugirard', 'France','Paris','Paris 75','75015',06557788,'jeaffy.rennes@gmail.com','azerty2')
-
--- Table Commande
-CREATE TABLE `ordered` 
-
-    ( `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
-    `id_users` INT, FOREIGN KEY (id_users) REFERENCES users(id),
-    `id_products` INT, FOREIGN KEY (id_products) REFERENCES products(id),
-    `Quantite` INT(10) NOT NULL,
-    `Date Commande` DATE 
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+('Mckenzie','Jeaffy','HOMME',"1992-12-24",'15 Square Vaugirard', 'France','Paris','Paris 75','75015',06557788,'jeaffy.rennes@gmail.com','azerty2');
