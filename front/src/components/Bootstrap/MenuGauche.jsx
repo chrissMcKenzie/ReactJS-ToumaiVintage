@@ -1,7 +1,7 @@
 import React from 'react'
 
 import "./MenuGauche.css"
-export const MenuGauche = ()=> {
+const MenuGauche = ()=> {
   return (
     <div className="container-fluid">
         <div className="row flex-nowrap">

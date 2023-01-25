@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import {Container, Row, Card, Col} from 'react-bootstrap';
-import products from '../../data';
-import Categorie from './Categorie';
+import products from '../../../data';
 
 
 
