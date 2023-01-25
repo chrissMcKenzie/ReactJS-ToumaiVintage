@@ -43,7 +43,7 @@ export default function ListeProduits() {
         <div key={productCat.id} className="row row-cols-1 row-cols-md-3 g-4">
           <div className="col">
             <div className="card h-100">
-              <img src={JeuVideo} className="card-img-top" alt={productCat.title}></img>
+              <img src={productCat.imgSrc} className="card-img-top" alt={productCat.title}></img>
               <div className="card-body">
                 <h5 className="card-title">{productCat.title}</h5>
                 <p>Prix: {productCat.price}</p>
@@ -58,4 +58,3 @@ export default function ListeProduits() {
   )
 }
 
-export default MenuGauche
