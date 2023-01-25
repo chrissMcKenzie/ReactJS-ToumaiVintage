@@ -6,6 +6,7 @@ import products from '../../../data';
 
 
 
+
 const categoryList = products.reduce(function (values, item) {
   if (!values.includes(item.category)) {
       values.push(item.category);

@@ -4,7 +4,6 @@ import {Container, Row, Card, Col} from 'react-bootstrap';
 
 //* Pages
 import "./Accueil.css"
-import products from '../../data';
 import ListeCategories from '../components/React-Bootstrap/ListeCategories';
 
  
