@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true}))
 
 const connectionOption = {
     host: "localhost",
-    database: "vintage_bases",
+    database: "vintages_bases",
     user:"root",
     password: "",
     port: 3306
@@ -31,6 +31,6 @@ mysql.createConnection(connectionOption)
     })
 })
 
-app.listen(3005,() => {
+app.listen(3000,() => {
     console.log(`j'ecoute sur le port`)
 })
