@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import {Container, Row, Card, Col} from 'react-bootstrap';
-import products from '../../data';
-import Categorie from './Categorie';
+import products from '../../../data';
+
 
 
 
@@ -12,7 +12,7 @@ const categoryList = products.reduce(function (values, item) {
   }
   return values;
 },[]);
-// console.log(categoryList)
+console.log(categoryList)
  
 const ListeCategories = () => {
 const [categories, setCategories] = useState([]);
