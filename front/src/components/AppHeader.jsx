@@ -25,7 +25,7 @@ const AppHeader = () => {
             </div>
         </section>
         <section>
-            <div>
+            <div className="ButtonConnexion">
                 <Link to="/Connexion"><b>Connexion</b></Link>
                 {/* {user && <a href='/Historique' style={{marginRight: '10px', color: 'red'}}>Historique</a>}
                 {user === true || user !== null ? <a href='/Connexion' style={{color:'white'}} onClick={Logout}>Deconnexion</a> : <a href='/Connexion' style={{color:'white'}}>Connexion</a>} */}

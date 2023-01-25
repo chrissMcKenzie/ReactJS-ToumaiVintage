@@ -57,7 +57,6 @@ mysql.createConnection(connectionOption)
         const Quantite =req.body.Quantite
         const Price=req.body.Price
         const Date_Commande =req.body.Date_Commande
-
         const responseDB = await db.query('INSERT INTO products (id_users, id_products, Quantite, Price, Date_Commande) VALUES (?,?,?,?,?)',[id_users, id_products, Quantite, Price, Date_Commande])
         res.json({status:200,responseDB})
     })
