@@ -77,6 +77,6 @@ CREATE TABLE `ordered`
     `id_users` INT, FOREIGN KEY (id_users) REFERENCES users(id),
     `id_products` INT, FOREIGN KEY (id_products) REFERENCES products(id),
     `Quantite` INT(10) NOT NULL,
-    `Date_Commande` date
+    `Date Commande` DATE 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
