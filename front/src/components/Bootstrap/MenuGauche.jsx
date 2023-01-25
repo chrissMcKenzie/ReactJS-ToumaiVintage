@@ -3,11 +3,11 @@ import React from 'react'
 import "./MenuGauche.css"
 const MenuGauche = ()=> {
   return (
-    <div className="container-fluid">
+    <nav className="container-fluid">
         <div className="row flex-nowrap">
             <div id="MenuGauche" className="col-auto col-md-3 col-xl-2 px-sm-5 px-0">
                 <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                    <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <ul id="menu" className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start shadow">
                         <li className="nav-item">
                             <a href="#" className="nav-link align-middle px-0">
                                 <i className="fs-4 bi-house"></i> <span className="ms-1 d-none d-sm-inline">Accueil</span>
@@ -49,28 +49,18 @@ const MenuGauche = ()=> {
                         </li>
                     </ul>
                     <hr />
-                    <div className="dropdown pb-4">
-                        <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" className="rounded-circle" />
-                            <span className="d-none d-sm-inline mx-1">loser</span>
-                        </a>
-                        <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
-                            <li><a className="dropdown-item" href="#">New project...</a></li>
-                            <li><a className="dropdown-item" href="#">Settings</a></li>
-                            <li><a className="dropdown-item" href="#">Profile</a></li>
-                            <li>
-                                <hr className="dropdown-divider" />
-                            </li>
+                    {/* <div className="dropdown pb-4"> */}
+                        <ul className="text-primary shadow">
                             <li><a className="dropdown-item" href="/Déconnexion">Déconnexion</a></li>
                         </ul>
-                    </div>
+                    {/* </div> */}
                 </div>
             </div>
             <div className="col py-3">
                 Content area...
             </div>
         </div>
-    </div>
+    </nav>
   )
 }
 
