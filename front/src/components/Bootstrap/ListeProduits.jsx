@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import products from '../../../data';
+// import products from '../../../data';
+import products2 from '../../../data2';
+// import products3 from '../../../data3';
 import JeuVideo from "../../media/images/jeu-vidéo.jpg"
 
 import a from "../../media/images/appareil-photo.jpg";
@@ -28,7 +30,7 @@ const ListeProduits =()=> {
   // console.log(id)
   useEffect(() => {
     return () => {
-      const result = products.filter((curdata) =>{
+      const result = products2.filter((curdata) =>{
         return curdata.category === id
       })
       console.log(result)
