@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 //* Images
-import logoToumaï from "./../media/images/Logo_Toumaï0.png"
+import logoToumaï from "../media/images/Logo_Toumaï0.png"
 
 //* pages
 import "./AppFooter.css"
