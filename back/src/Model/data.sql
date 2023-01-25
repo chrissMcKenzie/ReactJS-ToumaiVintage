@@ -76,6 +76,7 @@ CREATE TABLE `ordered`
     ( `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
     `id_users` INT, FOREIGN KEY (id_users) REFERENCES users(id),
     `id_products` INT, FOREIGN KEY (id_products) REFERENCES products(id),
-    `Quantite` INT(10) NOT NULL 
+    `Quantite` INT(10) NOT NULL,
+    `Date Commande` DATE 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
