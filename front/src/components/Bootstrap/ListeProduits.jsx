@@ -3,7 +3,7 @@ import React from 'react'
 // import JeuVideo from "../../media"
 import JeuVideo from "../../media/images/jeu-vidéo.jpg"
 
-export default function ListeProduits() {
+export const ListeProduits = ()=>{
   return (
     <div className="row row-cols-1 row-cols-md-3 g-4">
         <div className="col">
@@ -19,3 +19,5 @@ export default function ListeProduits() {
       </div>
   )
 }
+
+export default MenuGauche

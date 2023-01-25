@@ -1,11 +1,11 @@
 import React from 'react'
 
-import "./LeftSideMenu1.css"
-export default function LeftSideMenu1() {
+import "./MenuGauche.css"
+export const MenuGauche = ()=> {
   return (
     <div className="container-fluid">
         <div className="row flex-nowrap">
-            <div id="LeftSideMenu1" className="col-auto col-md-3 col-xl-2 px-sm-5 px-0">
+            <div id="MenuGauche" className="col-auto col-md-3 col-xl-2 px-sm-5 px-0">
                 <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <li className="nav-item">
@@ -73,3 +73,5 @@ export default function LeftSideMenu1() {
     </div>
   )
 }
+
+export default MenuGauche
