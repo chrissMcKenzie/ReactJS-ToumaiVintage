@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-
+import React from 'react'
 import ListeProduits from '../components/Bootstrap/ListeProduits'
 
 export default function Categorie() {

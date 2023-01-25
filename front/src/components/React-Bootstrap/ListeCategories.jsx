@@ -5,13 +5,15 @@ import products from '../../../data';
 
 
 
+
+
 const categoryList = products.reduce(function (values, item) {
   if (!values.includes(item.category)) {
       values.push(item.category);
   }
   return values;
 },[]);
-// console.log(categoryList)
+console.log(categoryList)
  
 const ListeCategories = () => {
 const [categories, setCategories] = useState([]);
