@@ -2,28 +2,14 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import products from '../../data';
+import ListeProduits from '../components/Bootstrap/ListeProduits'
 
 
-import JeuVideo from "../media/images/jeu-vidéo.jpg"
-export default function Categorie() {
-  const [productsCategory, setProductsCategory] = useState([]);
 
-  const {id} = useParams()
-  // console.log(id)
-
-  useEffect(() => {
- 
-    return () => {
-      const result = products.filter((curdata) =>{
-        return curdata.category === id
-      })
-      console.log(result)
-      setProductsCategory(result)
-    };
-  }, []);
-    
-  
-  
+import ListeProduits from '../components/Bootstrap/ListeProduits'
+// import JeuVideo from "../media/images/jeu-vidéo.jpg"
+export default function Categorie({data}) {
+  console.log(data)
  
   return (
     <>
@@ -43,9 +29,7 @@ export default function Categorie() {
         </div>
       )
     })}
-    
+    <ListeProduits />
   </>
-    
+  )}
       
-  )
-}
