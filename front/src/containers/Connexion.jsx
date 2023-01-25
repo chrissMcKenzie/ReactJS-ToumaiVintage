@@ -45,13 +45,12 @@ function Connexion() {
                     </Form>
                     <div className="mt-3">
                       <p className="mb-2  text-center">
-                      
-                      Mot de Passe Oublier? {"  "}
+                        Mot de Passe Oublier? {"  "}
                         <a href="/Inscription" className="text-primary fw-bold">
                         Réinitialiser votre Mot de Passe
-                      </a>
+                        </a>
 
-                        Pas de compte? {" "}
+                        {" "} Pas de compte? {" "}
                         <a href="/Inscription" className="text-primary fw-bold">
                         Inscrivez-vous
                         </a>

@@ -66,9 +66,9 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `users` (`Prénom`,`Nom`,`Sexe`,`Date de Naissance`,`Adresse`,`Pays`,`Ville`, `Département`,`Code Postal`,`Téléphone`,`Email`,`Mot de Passe`) VALUES
-('Sidi','CISSE','HOMME',1990-12-24,'15 Square Vaugirard', 'France','Paris','Paris 75','75015',06556677,'balla.rennes@gmail.com','azerty1'),
-('Mous','SOW','HOMME',1991-12-24,'15 Square Vaugirard', 'France','Paris','Paris 75','75015',06556688,'mouss.rennes@gmail.com','azerty1'),
-('Mckenzie','Jeaff','HOMME',1992-12-24,'15 Square Vaugirard', 'France','Paris','Paris 75','75015',06557788,'jeaffy.rennes@gmail.com','azerty2')
+('Sidi','CISSE','HOMME',"1990-12-24",'15 Square Vaugirard', 'France','Paris','Paris 75','75015',06556677,'balla.rennes@gmail.com','azerty1'),
+('Mous','SOW','HOMME',"1991-12-24",'15 Square Vaugirard', 'France','Paris','Paris 75','75015',06556688,'mouss.rennes@gmail.com','azerty1'),
+('Mckenzie','Jeaff','HOMME',"1992-12-24",'15 Square Vaugirard', 'France','Paris','Paris 75','75015',06557788,'jeaffy.rennes@gmail.com','azerty2')
 
 -- Table Commande
 CREATE TABLE `ordered` 
