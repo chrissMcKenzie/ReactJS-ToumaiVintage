@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import {Container, Row, Card, Col} from 'react-bootstrap';
-import products from '../../../data';
+import products2 from '../../../data2';
 
-
-
-
-
-const categoryList = products.reduce(function (values, item) {
+const categoryList = products2.reduce(function (values, item) {
   if (!values.includes(item.category)) {
       values.push(item.category);
   }
