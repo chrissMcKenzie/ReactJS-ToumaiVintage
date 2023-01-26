@@ -2,6 +2,7 @@ import React from 'react'
 
 import "./MenuGauche.css"
 const MenuGauche = ()=> {
+    
   return (
     <nav className="container-fluid">
         <div id="Row" className="row flex-nowrap">

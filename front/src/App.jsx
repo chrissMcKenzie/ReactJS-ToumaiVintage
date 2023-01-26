@@ -19,6 +19,7 @@ import Produits from "./containers/Produits"
 import Details from "./containers/Details"
 import Panier from "./containers/Panier"
 import Payement from "./containers/Payement"
+import NotFound404 from "./containers/NotFound404"
 
 class App extends Component {
   constructor(props) {
@@ -52,7 +53,8 @@ class App extends Component {
               {/* <Route path="/Produits" element={<Produit />} /> */}
               <Route path="/Details" element={<Details />} />
               <Route path="/Panier" element={<Panier />} />
-              <Route path="/Payement" element={<Payement />} />
+              
+              <Route path="*" element={<NotFound404 />} />
           </Routes>
         </main>
         <AppFooter/>
