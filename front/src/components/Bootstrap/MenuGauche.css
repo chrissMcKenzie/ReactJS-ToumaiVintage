@@ -1,3 +1,18 @@
+nav{
+    margin-top: -1%;
+    margin-left: -2%;
+    
+    /* padding-top: -2.5%;
+    padding-left: -3%; */
+    /* height: 100%; */
+    border: 1px solid red;
+}
+
+#Row{
+    height: 100%;
+}
+
 #MenuGauche{
+    height: 100%;
     background-color: #caede3;
 }
