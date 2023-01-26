@@ -43,14 +43,15 @@ class App extends Component {
         <AppHeader />
         <main>
           <Routes>
-              <Route path="/Accueil" element={<Accueil />} />
               <Route path="/" element={<Accueil />} />
+              <Route path="/Accueil" element={<Accueil />} />
               <Route path="/Inscription" element={<Inscription />} />
               <Route path="/Connexion" element={<Connexion />} />
               <Route path="/Profil" element={<Profil />} />
-              <Route path="/Categorie" element={<Categorie />} />
+              {/* <Route path="/:NomCategories/ListeProduits" element={<Categorie />} /> */}
+              {/* <Route path="/:NomCategorie/ListeProduits" element={<Produits />} /> */}
               <Route path="/Categorie/:id" element={<Categorie />} />
-              <Route path="/Categorie/Produits" element={<Produits />} />
+              {/* <Route path="/Categorie/Produits" element={<Produits />} /> */}
               {/* <Route path="/Categorie/:id/Produits" element={<Produits />} /> */}
               {/* <Route path="/Produits" element={<Produit />} /> */}
               <Route path="/Details" element={<Details />} />

@@ -36,6 +36,7 @@ const products2 =    [
       title: "Jeu nint",
       description: "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",
       price: "80 €",    
+      // imgSrc: "../src/media/images/Categorie_JeuxVeosVintages.png",
       imgSrc: "../src/media/images/jeu-vidéo.jpg",
       category: "jeux vidéo",
     },

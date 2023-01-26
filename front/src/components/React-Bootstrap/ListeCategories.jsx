@@ -28,7 +28,7 @@ useEffect(() => {
       <Row className='row-card'>
 
         <Col md={6} lg={4} className='mb-4 mb-lg-5'>
-          <Link to={`/categorie/${categories[0]}`} style={{ textDecoration: 'none' }}>
+          <Link to={`/Categorie/${categories[0]}`} style={{ textDecoration: 'none' }}>
             <Card className="card-1" style={{ height: '13rem'}}>
               <Card.Body className='card-body-overlay d-flex flex-column justify-content-center'>
                 <Card.Title className='text-light fw-bold' style={{fontSize: 45}}>{categories[0]}</Card.Title>
@@ -38,7 +38,7 @@ useEffect(() => {
         </Col>
     
         <Col md={6} lg={4} className='mb-4 mb-lg-5 offset-lg-4'>
-        <Link to={`/categorie/${categories[1]}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/Categorie/${categories[1]}`} style={{ textDecoration: 'none' }}>
 
           <Card className="card-2" style={{ height: '13rem'}}>
             <Card.Body className='card-body-overlay d-flex flex-column justify-content-center'>
@@ -50,7 +50,7 @@ useEffect(() => {
         </Col>
         
         <Col md={6} lg={4} className='mb-4'>
-        <Link to={`/categorie/${categories[2]}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/Categorie/${categories[2]}`} style={{ textDecoration: 'none' }}>
 
           <Card className="card-3" style={{ height: '13rem'}}>
               <Card.Body className='card-body-overlay d-flex flex-column justify-content-center'>
@@ -62,7 +62,7 @@ useEffect(() => {
         </Col>
 
         <Col md={6} lg={4} className='mb-4 offset-lg-4'>
-        <Link to={`/categorie/${categories[3]}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/Categorie/${categories[3]}`} style={{ textDecoration: 'none' }}>
 
           <Card className="card-4" style={{ height: '13rem'}}>
             <Card.Body className='card-body-overlay d-flex flex-column justify-content-center'>
@@ -74,7 +74,7 @@ useEffect(() => {
         </Col>
 
         <Col lg={4} className='mb-4 last-card'>
-        <Link to={`/categorie/${categories[4]}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/Categorie/${categories[4]}`} style={{ textDecoration: 'none' }}>
 
           <Card className="card-5" style={{ height: '13rem'}}>
             <Card.Body className='card-body-overlay d-flex flex-column justify-content-center'>

@@ -22,6 +22,7 @@ Techno exiger : SQL / ExpressJS / ReactJS
 
 [Commands]
 npm install bootstrap react-bootstrap
+"main": "./src/index.js",
 
 [Source]
 - https://looka.com/blog/vintage-color-palettes/
