@@ -53,7 +53,7 @@ class App extends Component {
               <Route path="/Categorie/:id" element={<Categorie />} />
               {/* <Route path="/Categorie/Produits" element={<Produits />} /> */}
               {/* <Route path="/Categorie/:id/Produits" element={<Produits />} /> */}
-              {/* <Route path="/Produits" element={<Produit />} /> */}
+              {/* <Route path="/Produit" element={<Produit />} /> */}
               <Route path="/Details" element={<Details />} />
               <Route path="/Panier" element={<Panier />} />
               <Route path="/Payement" element={<Payement />} />
