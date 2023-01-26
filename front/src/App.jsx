@@ -6,10 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css"
 // import Button from 'react-bootstrap/Button'
 // import {Button} from 'react-bootstrap'
 
-//* Pages
-import './App.css'
+//* Components
 import AppHeader from './components/AppHeader'
 import AppFooter from './components/AppFooter'
+
+//* Pages
+import './App.css'
 import Accueil from "./containers/Accueil"
 import Inscription from "./containers/Inscription"
 import Connexion from "./containers/Connexion"
@@ -53,6 +55,7 @@ class App extends Component {
               {/* <Route path="/Produits" element={<Produit />} /> */}
               <Route path="/Details" element={<Details />} />
               <Route path="/Panier" element={<Panier />} />
+              <Route path="/Payement" element={<Payement />} />
               
               <Route path="*" element={<NotFound404 />} />
           </Routes>
