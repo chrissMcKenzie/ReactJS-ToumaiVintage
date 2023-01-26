@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const mysql = require('promise-mysql')
 
+const cors = require('cors')
+app.use(cors())
+
 //const bodyParser = require('body-parser')
 //app.use(bodyParser.urlencoded({ extended: false}))
 //app.use(bodyParser.json())
@@ -48,23 +51,36 @@ mysql.createConnection(connectionOption)
         res.json({status:200, responseDB})
     });
 
+    // Envoyer les données des utilisateurs à la base de données lors de l'inscription
+    app.post('/users/add', async(req,res)=>{
+        const Prenom =req.body.Prenom
+        const Nom =req.body.Nom
+        const Sexe =req.body.Sexe
+        const Date_de_naissance =req.body.Date_de_naissance
+        const Adresse =req.body.Adresse
+        const Pays =req.body.Pays
+        const Ville =req.body.Ville
+        const Departement =req.body.Departement
+        const Code_postal =req.body.Code_postal
+        const Telephone =req.body.Telephone
+        const Email =req.body.Email
+        const Mot_de_passe =req.body.Mot_de_passe
 
-
-
-    app.post('/ordered', async(req,res)=>{
-        const id_users =req.body.id_users
-        const id_products =req.body.id_products
-        const Quantite =req.body.Quantite
-        const Price=req.body.Price
-        const Date_Commande =req.body.Date_Commande
-        const responseDB = await db.query('INSERT INTO products (id_users, id_products, Quantite, Price, Date_Commande) VALUES (?,?,?,?,?)',[id_users, id_products, Quantite, Price, Date_Commande])
+        const responseDB = await db.query('INSERT INTO users (Prenom, Nom, Sexe, Date_de_naissance, Adresse, Pays, Ville, Departement, Code_postal, Telephone, Email, Mot_de_passe) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',[Prenom, Nom, Sexe, Date_de_naissance, Adresse, Pays, Ville, Departement, Code_postal, Telephone, Email, Mot_de_passe])
         res.json({status:200,responseDB})
     })
+    
+    // Enregistrer une commande
 
-
-
-
-   
+    // app.post('/ordered/add', async(req,res)=>{
+    //     const id_users =req.body.id_users
+    //     const id_products =req.body.id_products
+    //     const Quantite =req.body.Quantite
+    //     const Price=req.body.Price
+    //     const Date_Commande =req.body.Date_Commande
+    //     const responseDB = await db.query("INSERT INTO ordered (id_users, id_products, Quantite, Price, Date_Commande) VALUES (?,?,?,?,?)",[id_users, id_products, Quantite, Price, Date_Commande])
+    //     res.json({status:200,responseDB})
+    // })
 })
 
 app.listen(3000,() => {

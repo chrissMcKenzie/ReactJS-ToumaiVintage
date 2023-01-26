@@ -47,6 +47,30 @@ const products2 =    [
       imgSrc: "../src/media/images/appareil-photo.jpg",
       category: "Appareils Photo",
     },
+    {
+      id: 7,
+      title: "Labtop",
+      description: "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",
+      price: "70 €",    
+      imgSrc: "../src/media/images/ordinateur.jpg",
+      category: "Ordinateurs",
+    },
+    {
+      id: 8,
+      title: "Labtop",
+      description: "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",
+      price: "70 €",    
+      imgSrc: "../src/media/images/ordinateur.jpg",
+      category: "Ordinateurs",
+    },
+    {
+      id: 9,
+      title: "Labtop",
+      description: "Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa vaporware",
+      price: "70 €",    
+      imgSrc: "../src/media/images/ordinateur.jpg",
+      category: "Ordinateurs",
+    },
   ]
   
   export default products2

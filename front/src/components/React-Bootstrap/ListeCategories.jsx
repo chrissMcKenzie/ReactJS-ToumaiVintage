@@ -2,23 +2,34 @@ import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import {Container, Row, Card, Col} from 'react-bootstrap';
 import products2 from '../../../data2';
+import axios from "axios";
 
-const categoryList = products2.reduce(function (values, item) {
-  if (!values.includes(item.category)) {
-      values.push(item.category);
-  }
-  return values;
-},[]);
-console.log(categoryList)
+
+
+// console.log(categoryList)
  
 const ListeCategories = () => {
 const [categories, setCategories] = useState([]);
   
 useEffect(() => {
-
-  return () => {
+  axios.get('http://localhost:3000/products')
+  .then(function (response) {
+    // en cas de réussite de la requête
+    const datas = response.data   
+    const categoryList = datas.reduce(function (values, item) {
+      if (!values.includes(item.category)) {
+          values.push(item.category);
+      }
+      return values;
+    },[]);
     setCategories(categoryList)
-  };
+  })
+  .catch(function (error) {
+    // en cas d’échec de la requête
+    console.log(error);
+  })
+  
+ 
 }, []);
 
   return (
