@@ -1,12 +1,12 @@
 import React from 'react'
 
 // * Components
-import LeftSideMenu1 from '../components/Bootstrap/MenuGauche'
+import MenuGauche from '../components/Bootstrap/MenuGauche'
 
 export default function Panier() {
   return (
-    <div>Panier
-      <LeftSideMenu1 />
+    <div>
+      <MenuGauche />
     </div>
   )
 }

@@ -6,10 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css"
 // import Button from 'react-bootstrap/Button'
 // import {Button} from 'react-bootstrap'
 
-//* Pages
-import './App.css'
+//* Components
 import AppHeader from './components/AppHeader'
 import AppFooter from './components/AppFooter'
+
+//* Pages
+import './App.css'
 import Accueil from "./containers/Accueil"
 import Inscription from "./containers/Inscription"
 import Connexion from "./containers/Connexion"
@@ -19,6 +21,7 @@ import Produits from "./containers/Produits"
 import Details from "./containers/Details"
 import Panier from "./containers/Panier"
 import Payement from "./containers/Payement"
+import NotFound404 from "./containers/NotFound404"
 
 class App extends Component {
   constructor(props) {
@@ -40,19 +43,22 @@ class App extends Component {
         <AppHeader />
         <main>
           <Routes>
-              <Route path="/Accueil" element={<Accueil />} />
               <Route path="/" element={<Accueil />} />
+              <Route path="/Accueil" element={<Accueil />} />
               <Route path="/Inscription" element={<Inscription />} />
               <Route path="/Connexion" element={<Connexion />} />
               <Route path="/Profil" element={<Profil />} />
-              <Route path="/Categorie" element={<Categorie />} />
+              {/* <Route path="/:NomCategories/ListeProduits" element={<Categorie />} /> */}
+              {/* <Route path="/:NomCategorie/ListeProduits" element={<Produits />} /> */}
               <Route path="/Categorie/:id" element={<Categorie />} />
-              <Route path="/Categorie/Produits" element={<Produits />} />
+              {/* <Route path="/Categorie/Produits" element={<Produits />} /> */}
               {/* <Route path="/Categorie/:id/Produits" element={<Produits />} /> */}
-              {/* <Route path="/Produits" element={<Produit />} /> */}
+              {/* <Route path="/Produit" element={<Produit />} /> */}
               <Route path="/Details" element={<Details />} />
               <Route path="/Panier" element={<Panier />} />
               <Route path="/Payement" element={<Payement />} />
+              
+              <Route path="*" element={<NotFound404 />} />
           </Routes>
         </main>
         <AppFooter/>

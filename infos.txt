@@ -22,11 +22,16 @@ Techno exiger : SQL / ExpressJS / ReactJS
 
 [Commands]
 npm install bootstrap react-bootstrap
+"main": "./src/index.js",
 
 [Source]
 - https://looka.com/blog/vintage-color-palettes/
 - https://stackoverflow.com/questions/7018535/use-multiple-custom-fonts-using-font-face
 - https://stackoverflow.com/questions/14676613/how-to-import-google-web-font-in-css-file
+- https://stackoverflow.com/questions/44607396/importing-multiple-files-in-react
+- https://www.youtube.com/watch?v=gEMAZSO85KY
+- https://www.youtube.com/watch?v=U07wzhfu66M
+
 [PROCESS GIT]
 À la racine du projet
 git status
