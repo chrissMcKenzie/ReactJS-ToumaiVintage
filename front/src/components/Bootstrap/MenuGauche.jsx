@@ -2,7 +2,7 @@ import React from 'react'
 
 import "./MenuGauche.css"
 const MenuGauche = ()=> {
-    
+
   return (
     <nav className="container-fluid">
         <div id="Row" className="row flex-nowrap">
@@ -59,6 +59,7 @@ const MenuGauche = ()=> {
                 </div>
             </div>
             <div className="col py-3">
+                <h2 className="text-center">Bonjour BAKA</h2>
                 Content area...
             </div>
         </div>
