@@ -20,7 +20,8 @@ const AppHeader = () => {
         </section>
         <section>
             <div>
-                <Link to="/"><h2 id="titre">Toumaï.com</h2></Link> 
+                <Link to="/"><h2 id="titre">Toumaï.com</h2></Link>
+                <p className="text-light">Produits Électronique Vintage</p>
                 {/* { user && <h2>Bonjour {user.nom}</h2>} */}
             </div>
         </section>

@@ -16,7 +16,7 @@ const connectionOption = {
     database: "vintages_bases",
     user:"root",
     password: "",
-    port: 3306
+    port: 3307
 }
 
 mysql.createConnection(connectionOption)
