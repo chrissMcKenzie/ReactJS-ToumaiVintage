@@ -13,7 +13,7 @@ function FormulaireDePaiement() {
                     <Card.Body>
                         <div className="mb-3 mt-md-4">
                             <h2 className="fw-bold mb-2 text-center text-uppercase ">
-                            Formulaire De Paiement
+                                Formulaire De Paiement
                             </h2>
                             <div className="mb-3">
                                 <Form method="POST" action="/Inscription">
