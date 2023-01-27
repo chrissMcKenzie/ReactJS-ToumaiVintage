@@ -1,5 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
+
 
 //* Images
 import logoToumaï from "./../media/images/Logo_Toumai0.png"
@@ -32,6 +33,9 @@ const AppHeader = () => {
                 {user === true || user !== null ? <a href='/Connexion' style={{color:'white'}} onClick={Logout}>Deconnexion</a> : <a href='/Connexion' style={{color:'white'}}>Connexion</a>} */}
             </div>
         </section>
+        <div>
+            <Link to="/Basket"><img style={{ width:"50px", height:"50px" }} src="../src/media/images/basket.svg" alt="panier d'achat" /></Link> 
+       </div>
     </header>
   )
 }

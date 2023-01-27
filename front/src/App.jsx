@@ -19,9 +19,11 @@ import Profil from "./containers/Profil"
 import Categorie from "./containers/Categorie"
 import Produits from "./containers/Produits"
 import Details from "./containers/Details"
-import Panier from "./containers/Panier"
+import Panier from "./containers/Basket"
 import Payement from "./containers/Payement"
 import NotFound404 from "./containers/NotFound404"
+import DetailsProducts from './containers/DetailsProducts';
+
 
 class App extends Component {
   constructor(props) {
@@ -55,7 +57,8 @@ class App extends Component {
               {/* <Route path="/Categorie/:id/Produits" element={<Produits />} /> */}
               {/* <Route path="/Produit" element={<Produit />} /> */}
               <Route path="/Details" element={<Details />} />
-              <Route path="/Panier" element={<Panier />} />
+              <Route path="/DetailsProducts/:id" element={<DetailsProducts />} />
+              {/* <Route path="/Panier" element={<Basket />} /> */}
               <Route path="/Payement" element={<Payement />} />
               
               <Route path="*" element={<NotFound404 />} />
