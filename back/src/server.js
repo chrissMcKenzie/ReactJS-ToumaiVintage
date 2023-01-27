@@ -72,15 +72,15 @@ mysql.createConnection(connectionOption)
     
     // Enregistrer une commande
 
-    // app.post('/ordered/add', async(req,res)=>{
-    //     const id_users =req.body.id_users
-    //     const id_products =req.body.id_products
-    //     const Quantite =req.body.Quantite
-    //     const Price=req.body.Price
-    //     const Date_Commande =req.body.Date_Commande
-    //     const responseDB = await db.query("INSERT INTO ordered (id_users, id_products, Quantite, Price, Date_Commande) VALUES (?,?,?,?,?)",[id_users, id_products, Quantite, Price, Date_Commande])
-    //     res.json({status:200,responseDB})
-    // })
+    app.post('/ordered/add', async(req,res)=>{
+        const id_users =req.body.id_users
+        const id_products =req.body.id_products
+        const Quantite =req.body.Quantite
+        const Price=req.body.Price
+        const Date_Commande =req.body.Date_Commande
+        const responseDB = await db.query("INSERT INTO ordered (id_users, id_products, Quantite, Price, Date_Commande) VALUES (?,?,?,?,?)",[id_users, id_products, Quantite, Price, Date_Commande])
+        res.json({status:200,responseDB})
+    })
 })
 
 app.listen(3000,() => {
