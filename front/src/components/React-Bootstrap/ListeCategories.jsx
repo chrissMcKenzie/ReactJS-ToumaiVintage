@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import {Container, Row, Card, Col} from 'react-bootstrap';
+<<<<<<< HEAD
+=======
+// import products2 from '../../../data2';
+>>>>>>> da8acf01d81544fb706ef0d093c5d892a54ffa1d
 import axios from "axios";
  
 const ListeCategories = () => {
