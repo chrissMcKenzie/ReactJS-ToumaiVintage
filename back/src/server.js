@@ -16,7 +16,7 @@ const connectionOption = {
     database: "vintages_bases",
     user:"root",
     password: "",
-    port: 3307
+    port: 3306
 }
 
 mysql.createConnection(connectionOption)
@@ -72,13 +72,12 @@ mysql.createConnection(connectionOption)
     
     // Enregistrer une commande
 
-    app.post('/ordered/add', async(req,res)=>{
-        const id_users =req.body.id_users
+    app.post('/ordered/add', async(req,res) => {
+        const id_users = "1"
         const id_products =req.body.id_products
         const Quantite =req.body.Quantite
         const Price=req.body.Price
-        const Date_Commande =req.body.Date_Commande
-        const responseDB = await db.query("INSERT INTO ordered (id_users, id_products, Quantite, Price, Date_Commande) VALUES (?,?,?,?,?)",[id_users, id_products, Quantite, Price, Date_Commande])
+        const responseDB = await db.query("INSERT INTO ordered (id_users, id_products, Quantite, Price) VALUES (?,?,?,?)",[id_users, id_products, Quantite, Price])
         res.json({status:200,responseDB})
     })
 })

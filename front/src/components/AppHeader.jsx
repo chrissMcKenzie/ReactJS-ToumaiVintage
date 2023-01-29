@@ -8,7 +8,7 @@ import logoToumaï from "./../media/images/Logo_Toumai0.png"
 //* pages
 import "./AppHeader.css"
 
-const AppHeader = () => {
+const AppHeader = ({countCartItems}) => {
   return (
     <header>
         <section>
@@ -32,12 +32,16 @@ const AppHeader = () => {
                 {/* {user && <a href='/Historique' style={{marginRight: '10px', color: 'red'}}>Historique</a>}
                 {user === true || user !== null ? <a href='/Connexion' style={{color:'white'}} onClick={Logout}>Deconnexion</a> : <a href='/Connexion' style={{color:'white'}}>Connexion</a>} */}
             </div>
-        </section>
-        <div>
-            <Link to="/Basket"><img style={{ width:"50px", height:"50px" }} src="../src/media/images/basket.svg" alt="panier d'achat" /></Link> 
-       </div>
+        </section> 
+        <div className='position-relative'>
+            <Link to="/Basket"><img style={{ width:"50px", height:"50px" }} src="../src/media/images/basket.svg" alt="panier d'achat" />{countCartItems ? (<button className="badge position-absolute btn btn-danger border-0" style={{top: "-1px", left:"37px"}}>{countCartItems}</button>) : " " }</Link>   
+        </div>
     </header>
   )
 }
 
 export default AppHeader;
+
+
+ 
+  

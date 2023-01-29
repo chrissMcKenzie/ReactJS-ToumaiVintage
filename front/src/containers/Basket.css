@@ -1,0 +1,32 @@
+
+.basket_product{
+  display: initial;
+
+  /* margin: auto;
+  display: block;
+  max-width: 105px; */
+}
+.basket_img{
+  margin-bottom: 10px;
+ 
+
+}
+.basket_title{
+margin-bottom: 10px;
+
+}
+.alert{
+  position: absolute;
+  bottom: 57px;
+  width: 529px;
+  background: green;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+}
+@media screen and (min-width: 770px) {
+  .basket_product{
+    display: flex;
+
+  }
+}

@@ -34,7 +34,7 @@ CREATE TABLE `ordered`( `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `id_products` INT, FOREIGN KEY (id_products) REFERENCES products(id),
     `Quantite` INT(10) NOT NULL,
     `Price` INT(10) NOT NULL,
-    `Date_Commande` DATE 
+    `Date_Commande` DATETIME DEFAULT CURRENT_TIMESTAMP 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `products` (`title`, `description`, `price`,`imgSrc`,`category`) VALUES
