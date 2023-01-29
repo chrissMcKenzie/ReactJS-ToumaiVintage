@@ -75,7 +75,9 @@ function Inscription() {
                     Inscription (New)
                   </h2>
                   <div className="mb-3">
-                    <Form method="POST" action="/Inscription">
+
+                    <Form method="POST" action="/Inscription"
+                      onChange={handleSubmit}>
                       <Row>
                         <Form.Group as={Col} className="mb-4" controlId="Prenom" >
                           <Form.Label className="text-center"> Prénom </Form.Label>
@@ -179,9 +181,7 @@ function Inscription() {
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formBasicCheckbox"></Form.Group>
                       <div className="d-grid">
-                        <Button variant="warning" size="lg" type="submit" style ={{backgroundColor:'#d3b94f', border:'0'}}
-                          onChange={handleSubmit}
-                        >
+                        <Button variant="warning" size="lg" type="submit" style ={{backgroundColor:'#d3b94f', border:'0'}}>
                           INSCRIPTION
                         </Button>
                       </div>
