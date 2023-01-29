@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Link} from 'react-router-dom'
+import Axios from "axios";
 
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 
@@ -21,34 +22,63 @@ function Inscription() {
 
   const [redirect, setRedirect] = useState(false)
 
-  let [state, setState] = useState([{
-    Prenom: "",
-    Nom: "",
-    Sexe: "",
-    DateDeNaissance: "",
-    Adresse: "",
-    Pays: "",
-    Ville: "",
-    Departement: "",
-    CodePostal: "",
-    Telephone: "",
-    Email: "",
-    MotDePasse: ""
-  }])
+  const [state, setState] = useState({
+    user: {
+      Prenom: "",
+      Nom: "",
+      Sexe: "",
+      DateDeNaissance: "",
+      Adresse: "",
+      Pays: "",
+      Ville: "",
+      Departement: "",
+      CodePostal: "",
+      Telephone: "",
+      Email: "",
+      MotDePasse: ""
+    }
+  })
 
-  let updateInput = (e) => {
+  const [matcher, setMatcher] = useState({
+    mdp: {
+      MotDePasseConfirme: ""
+    }
+  })
+
+  const updateInput = (e) => {
       setState({
         // ...state.user,
-           user: {
-              ...state.user,
-              [e.target.name]: e.target.value
-          }
+           user: 
+              e.target.name !== "DateDeNaissance" ? (
+                {
+                  ...state.user, [e.target.name]: e.target.value
+                }
+              ) : (
+                {
+                  ...state.user, [e.target.name]: JSON.stringify(e.target.value)
+                }
+              )
+          
       })
   }
+  const updateMatcher = (e) => {
+    setMatcher({
+      mdp: {
+        ...matcher.mdp,
+        [e.target.name]: e.target.value
+      }
+    })
+  }
 
-  let handleSubmit = async(e) => {
+  // const convert
+
+  const handleSubmit = async(e) => {
       e.preventDefault()
-      console.log(state.user, prenom);
+      // console.log("state",state);
+      console.log("user", state.user);
+      console.log("date", state.user.DateDeNaissance);
+      // console.log("dateString1", toString(state.user.DateDeNaissance));
+      console.log("dateString2", JSON.stringify(state.user.DateDeNaissance));
 
       // const Users = {
       //   Prenom: prenom,
@@ -64,17 +94,21 @@ function Inscription() {
       //   Email: email,
       //   MotDePasse: password
       // }; //console.log(Users);
+      JSON.stringify(state.user.DateDeNaissance)
 
-      // await axios.post("/users/add", Users)
-      //   .then((réponse)=>{
-      //       console.log(réponse)
-      //       console.log(réponse.data)
-      //       console.log(réponse.data)
-      //       console.log("status", réponse.status);
-      //       if(réponse.status === 200){
-      //         setRedirect(true)
-      //       }
-      //   }).catch((erreur)=>{ console.log(erreur);})
+      // useEffect( async()=>{
+        await Axios.post("/users/add", state.user)
+          .then((réponse)=>{
+              console.log(réponse)
+              console.log(réponse.data)
+              console.log("status", réponse.status);
+              console.log("data.status", réponse.data.status);
+              if(réponse.status === 200){
+                setRedirect(true)
+              }
+          }).catch((erreur)=>{ console.log(erreur)})
+      // }, [])
+      
   }
 
   return (
@@ -90,19 +124,21 @@ function Inscription() {
                   </h2>
                   <div className="mb-3">
 
-                    <Form method="POST" action="/Inscription"
-                      onChange={handleSubmit}>
+                    <Form method="POST" action="#"
+                      onSubmit={handleSubmit}>
                       <Row>
                         <Form.Group as={Col} className="mb-4" controlId="Prenom" >
                           <Form.Label className="text-center"> Prénom </Form.Label>
-                          <Form.Control type="text" name="Prenom" placeholder="Prénom ?"
-                            onChange={(e) => setPrenom(e.target.value)}
+                          <Form.Control type="text" name="Prenom" placeholder="Prénom ?" required
+                            className={`${state.user.Prenom === "" ? "is-invalid" : "is-valid"}`}
+                            onChange={updateInput}
                           />
                         </Form.Group>
 
                         <Form.Group as={Col} className="mb-3" controlId="Nom">
                           <Form.Label className="text-center"> Nom </Form.Label>
-                          <Form.Control type="text" name="Nom" placeholder="Nom de Famille ?"
+                          <Form.Control type="text" name="Nom" placeholder="Nom de Famille ?" required
+                            className={`${state.user.Nom === "" ? "is-invalid" : "is-valid"}`}
                             onChange={updateInput}
                           />
                         </Form.Group>
@@ -111,7 +147,8 @@ function Inscription() {
                       <Row>
                         <Form.Group as={Col}>
                           <Form.Label className="text-center">Sexe ?</Form.Label>
-                          <Form.Select aria-label="Default select example" name="Sexe"
+                          <Form.Select aria-label="Default select example" name="Sexe" required
+                            className={`${state.user.Sexe === "" ? "is-invalid" : "is-valid"}`}
                             onChange={updateInput}
                           >
                             <option value="Femme" defaultValue>Femme</option>
@@ -122,7 +159,8 @@ function Inscription() {
 
                         <Form.Group as={Col} className="mb-4" controlId="DateNaissance">
                           <Form.Label className="text-center"> Date de Naissance </Form.Label>
-                          <Form.Control type="Date" name="DateDeNaissance" placeholder="Date de Naissance ?"
+                          <Form.Control type="Date" name="DateDeNaissance" placeholder="Date de Naissance ?" required
+                            className={`${state.user.DateDeNaissance === "" ? "is-invalid" : "is-valid"}`}
                             onChange={updateInput}
                           />
                         </Form.Group>
@@ -130,7 +168,8 @@ function Inscription() {
 
                       <Form.Group className="mb-4" controlId="Adresse">
                         <Form.Label className="text-center">Adresse</Form.Label>
-                        <Form.Control type="text" name="Adresse" placeholder="Adresse ?"
+                        <Form.Control type="text" name="Adresse" placeholder="Adresse ?" required
+                          className={`${state.user.Adresse === "" ? "is-invalid" : "is-valid"}`}
                           onChange={updateInput}
                         />
                       </Form.Group>
@@ -138,22 +177,25 @@ function Inscription() {
                       <Row>
                         <Form.Group as={Col} className="mb-3" controlId="Pays">
                           <Form.Label className="text-center">Pays</Form.Label>
-                          <Form.Control type="text" name="Pays" placeholder="Pays ?"
-                            // onChange={updateInput}
+                          <Form.Control type="text" name="Pays" placeholder="Pays ?" required
+                            className={`${state.user.Pays === "" ? "is-invalid" : "is-valid"}`}
+                            onChange={updateInput}
                           />
                         </Form.Group>
 
                         <Form.Group as={Col} className="mb-4" controlId="Ville">
                           <Form.Label className="text-center">Ville</Form.Label>
-                          <Form.Control type="text" name="Ville" placeholder="Ville ?"
-                            // onChange={updateInput}
+                          <Form.Control type="text" name="Ville" placeholder="Ville ?" required
+                            className={`${state.user.Ville === "" ? "is-invalid" : "is-valid"}`}
+                            onChange={updateInput}
                           />
                         </Form.Group>
 
                         <Form.Group as={Col} className="mb-3" controlId="Departement" >
                           <Form.Label className="text-center"> Département </Form.Label>
-                          <Form.Control type="text" name="Departement" placeholder="Département ?"
-                            // onChange={updateInput}
+                          <Form.Control type="text" name="Departement" placeholder="Département ?" required
+                            className={`${state.user.Departement === "" ? "is-invalid" : "is-valid"}`}
+                            onChange={updateInput}
                           />
                         </Form.Group>
                       </Row>
@@ -161,36 +203,41 @@ function Inscription() {
                       <Row>
                         <Form.Group as={Col} className="mb-4" controlId="CODEPOSTAL">
                         <Form.Label className="text-center"> Code Postal </Form.Label>
-                        <Form.Control type="number" name="CodePostal" placeholder="Code Postal?"
-                          // onChange={updateInput}
+                        <Form.Control type="number" name="CodePostal" placeholder="Code Postal ?" required
+                          className={`${state.user.CodePostal === "" ? "is-invalid" : "is-valid"}`}
+                          onChange={updateInput}
                         />
                         </Form.Group>
 
                         <Form.Group as={Col} className="mb-4" controlId="NUMEROPHONE">
                           <Form.Label className="text-center"> Téléphone </Form.Label>
-                          <Form.Control type="phone" name="Telephone" placeholder="Numéro de Téléphone ?"
-                            // onChange={updateInput}
+                          <Form.Control type="phone" name="Telephone" placeholder="Numéro de Téléphone ?" required
+                            className={`${state.user.Telephone === "" ? "is-invalid" : "is-valid"}`}
+                            onChange={updateInput}
                           />
                         </Form.Group>
                       </Row>
             
                       <Form.Group className="mb-4" controlId="formBasicEmail">
                         <Form.Label className="text-center"> Email </Form.Label>
-                        <Form.Control type="email" name="Email" placeholder="Adresse Email?"
-                          // onChange={updateInput}
+                        <Form.Control type="email" name="Email" placeholder="Adresse Email ?" required
+                          className={`${state.user.Email === "" ? "is-invalid" : state.user.Email.includes("@") && state.user.Email.includes(".") ? "is-valid" : "is-invalid"}`}
+                          onChange={updateInput}
                         />
                       </Form.Group>
 
                       <Form.Group className="mb-4" controlId="formBasicPassword" >
                         <Form.Label>Mot de Passe</Form.Label>
-                        <Form.Control type="password" name="MotDePasse" placeholder="Password ?"
-                          // onChange={updateInput}
+                        <Form.Control type="password" name="MotDePasse" placeholder="Password ?" required
+                          className={`${state.user.MotDePasse === "" ? "is-invalid" : "is-valid"}`}
+                          onChange={updateInput}
                         />
                       </Form.Group>
                       <Form.Group className="mb-4" controlId="formBasicPassword1">
                         <Form.Label>Confirmer votre Mot de Passe</Form.Label>
-                        <Form.Control type="password" placeholder="Confirmer Mot de Passe ?"
-                          // onChange={updateInput}
+                        <Form.Control type="password" name="MotDePasseConfirme" placeholder="Confirmer Mot de Passe ?" required
+                          className={`${matcher.mdp.MotDePasseConfirme === "" ? "is-invalid" : matcher.mdp.MotDePasseConfirme === state.user.MotDePasse ? "is-valid" : "is-invalid"}`}
+                          onChange={updateMatcher}
                         />
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formBasicCheckbox"></Form.Group>
