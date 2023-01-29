@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import {Container, Row, Card, Col} from 'react-bootstrap';
-import products2 from '../../../data2';
+// import products2 from '../../../data2';
 import axios from "axios";
 
 
