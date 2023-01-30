@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {Link} from 'react-router-dom'
 import Axios from "axios";
+import { Navigate } from 'react-router-dom';
 
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 
@@ -73,12 +74,17 @@ function Inscription() {
               console.log("status", réponse.status);
               console.log("data.status", réponse.data.status);
               if(réponse.status === 200){
-                setRedirect(true)
+                window.location = "/Connexion"
+              //   setRedirect(true)
               }
           }).catch((erreur)=>{ console.log(erreur)})
       // }, [])
       
   }
+
+  // if(redirect){
+  //   return <Navigate to="/Connexion" /> 
+  // }
 
   return (
     <div>
