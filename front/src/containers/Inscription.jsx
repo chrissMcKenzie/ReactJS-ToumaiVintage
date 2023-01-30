@@ -6,18 +6,6 @@ import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 
 function Inscription() {
 
-  // const [prenom, setPrenom] = useState("")
-  // const [nom, setNom] = useState("")
-  // const [dateDeNaissance, setDateNaissance] = useState("")
-  // const [adresse, setAdresse] = useState("")
-  // const [pays, setPays] = useState("")
-  // const [ville, setVille] = useState("")
-  // const [departement, setDepartement] = useState("")
-  // const [codePostal, setCodePostal] = useState("")
-  // const [telephone, setTelephone] = useState("")
-  // const [email, setEmail] = useState("")
-  // const [password, setPassword] = useState("")
-
   // const [confirmPassword, setConfirmPassword] = useState("")
 
   // const [redirect, setRedirect] = useState(false)
@@ -27,15 +15,15 @@ function Inscription() {
       Prenom: "",
       Nom: "",
       Sexe: "",
-      DateDeNaissance: "",
+      Date_de_naissance: "",
       Adresse: "",
       Pays: "",
       Ville: "",
       Departement: "",
-      CodePostal: "",
+      Code_postal: "",
       Telephone: "",
       Email: "",
-      MotDePasse: ""
+      Mot_de_passe: ""
     }
   })
 
@@ -50,31 +38,18 @@ function Inscription() {
       setState(prev => {
         // ...state.user,
           return { ...prev, user:  {
-            ...state.user, [e.target.name]: JSON.stringify(e.target.value)
+            ...state.user, [e.target.name]: e.target.value.toString()
             // ...state.user, [e.target.name]: e.target.value.toString()
             }
           }
       })
-      // setState({
-      //   // ...state.user,
-      //      user: 
-      //         e.target.name !== "DateDeNaissance" ? (
-      //           {
-      //             ...prev, [e.target.name]: e.target.value
-      //           }
-      //         ) : (
-      //           {
-      //             ...state.user, [e.target.name]: value.toString()
-      //           }
-      //         )
-          
-      // })
   }
   const updateMatcher = (e) => {
-    setMatcher({
-      mdp: {
-        ...matcher.mdp,
-        [e.target.name]: e.target.value
+    setMatcher(prev =>{
+      return { ...prev, mdp: {
+          ...matcher.mdp,
+          [e.target.name]: e.target.value
+        }
       }
     })
   }
@@ -83,27 +58,12 @@ function Inscription() {
 
   const handleSubmit = async(e) => {
       e.preventDefault()
-      // console.log("state",state);
       console.log("user", state.user);
-      console.log("date", state.user.DateDeNaissance);
-      // console.log("dateString1", toString(state.user.DateDeNaissance));
-      console.log("dateString2", JSON.stringify(state.user.DateDeNaissance));
+      console.log("date", state.user.Date_de_naissance);
+      // console.log("dateString1", toString(state.user.Date_de_naissance));
+      console.log("dateString2", JSON.stringify(state.user.Date_de_naissance));
 
-      // const Users = {
-      //   Prenom: prenom,
-      //   Nom: nom,
-      //   Sexe: email,
-      //   DateDeNaissance: dateDeNaissance,
-      //   Adresse: adresse,
-      //   Pays: pays,
-      //   Ville: ville,
-      //   Departement: departement,
-      //   CodePostal: codePostal,
-      //   Telephone: telephone,
-      //   Email: email,
-      //   MotDePasse: password
-      // }; //console.log(Users);
-      JSON.stringify(state.user.DateDeNaissance)
+      JSON.stringify(state.user.Date_de_naissance)
 
       // useEffect( async()=>{
         await Axios.post("/users/add", state.user)
@@ -168,8 +128,8 @@ function Inscription() {
 
                         <Form.Group as={Col} className="mb-4" controlId="DateNaissance">
                           <Form.Label className="text-center"> Date de Naissance </Form.Label>
-                          <Form.Control type="Date" name="DateDeNaissance" placeholder="Date de Naissance ?" required
-                            className={`${state.user.DateDeNaissance === "" ? "is-invalid" : "is-valid"}`}
+                          <Form.Control type="text" name="Date_de_naissance" placeholder="ex: yyyy-mm-dd ?" required
+                            className={`${state.user.Date_de_naissance === "" ? "is-invalid" : "is-valid"}`}
                             onChange={updateInput}
                           />
                         </Form.Group>
@@ -212,8 +172,8 @@ function Inscription() {
                       <Row>
                         <Form.Group as={Col} className="mb-4" controlId="CODEPOSTAL">
                         <Form.Label className="text-center"> Code Postal </Form.Label>
-                        <Form.Control type="number" name="CodePostal" placeholder="Code Postal ?" required
-                          className={`${state.user.CodePostal === "" ? "is-invalid" : "is-valid"}`}
+                        <Form.Control type="number" name="Code_postal" placeholder="Code Postal ex: 75000 ?" required
+                          className={`${state.user.Code_postal === "" ? "is-invalid" : "is-valid"}`}
                           onChange={updateInput}
                         />
                         </Form.Group>
@@ -237,15 +197,15 @@ function Inscription() {
 
                       <Form.Group className="mb-4" controlId="formBasicPassword" >
                         <Form.Label>Mot de Passe</Form.Label>
-                        <Form.Control type="password" name="MotDePasse" placeholder="Password ?" required
-                          className={`${state.user.MotDePasse === "" ? "is-invalid" : "is-valid"}`}
+                        <Form.Control type="password" name="Mot_de_passe" placeholder="Password ?" required
+                          className={`${state.user.Mot_de_passe === "" ? "is-invalid" : "is-valid"}`}
                           onChange={updateInput}
                         />
                       </Form.Group>
                       <Form.Group className="mb-4" controlId="formBasicPassword1">
                         <Form.Label>Confirmer votre Mot de Passe</Form.Label>
                         <Form.Control type="password" name="MotDePasseConfirme" placeholder="Confirmer Mot de Passe ?" required
-                          className={`${matcher.mdp.MotDePasseConfirme === "" ? "is-invalid" : matcher.mdp.MotDePasseConfirme === state.user.MotDePasse ? "is-valid" : "is-invalid"}`}
+                          className={`${matcher.mdp.MotDePasseConfirme === "" ? "is-invalid" : matcher.mdp.MotDePasseConfirme === state.user.Mot_de_passe ? "is-valid" : "is-invalid"}`}
                           onChange={updateMatcher}
                         />
                       </Form.Group>

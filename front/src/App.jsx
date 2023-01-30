@@ -29,7 +29,7 @@ import DetailsProducts from './containers/DetailsProducts';
 
 
 const App = () => {
-  // const [countProduct, setCountProduct] = useState("");
+  const [countProduct, setCountProduct] = useState("");
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([])

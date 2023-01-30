@@ -2,24 +2,24 @@ import React, {useState} from 'react'
 import Axios from 'axios';
 
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
+import { Navigate } from 'react-router-dom';
 
 
 //* Pages
 
 function Connexion() {
 
-  // const [telephone, setTelephone] = useState("")
   // const [email, setEmail] = useState("")
   // const [password, setPassword] = useState("")
 
   // const [confirmPassword, setConfirmPassword] = useState("")
 
-  // const [redirect, setRedirect] = useState(false)
+  const [redirect, setRedirect] = useState(false)
 
   const [state, setState] = useState({
     user: {
       Email: "",
-      MotDePasse: ""
+      Mot_de_passe: ""
     }
   })
 
@@ -34,7 +34,7 @@ function Connexion() {
       setState(prev => {
         // ...state.user,
           return { ...prev, user:  {
-            ...state.user, [e.target.name]: JSON.stringify(e.target.value)
+            ...state.user, [e.target.name]: e.target.value.toString()
             // ...state.user, [e.target.name]: e.target.value.toString()
             }
           }
@@ -55,38 +55,27 @@ function Connexion() {
       e.preventDefault()
       // console.log("state",state);
       console.log("user", state.user);
-      console.log("date", state.user.DateDeNaissance);
-      // console.log("dateString1", toString(state.user.DateDeNaissance));
-      console.log("dateString2", JSON.stringify(state.user.DateDeNaissance));
-
-      // const Users = {
-      //   Prenom: prenom,
-      //   Nom: nom,
-      //   Sexe: email,
-      //   DateDeNaissance: dateDeNaissance,
-      //   Adresse: adresse,
-      //   Pays: pays,
-      //   Ville: ville,
-      //   Departement: departement,
-      //   CodePostal: codePostal,
-      //   Telephone: telephone,
-      //   Email: email,
-      //   MotDePasse: password
-      // }; //console.log(Users);
 
       // useEffect( async()=>{
-        await Axios.post("/users/add", state.user)
+        await Axios.get("/User/:Email", state.user)
           .then((réponse)=>{
               console.log(réponse)
               console.log(réponse.data)
               console.log("status", réponse.status);
               console.log("data.status", réponse.data.status);
               if(réponse.status === 200){
+                localStorage.setItem("user", JSON.stringify(réponse.data))
+                // setUser(réponse.data.user)
+                // setLogged(true)
                 setRedirect(true)
               }
           }).catch((erreur)=>{ console.log(erreur)})
       // }, [])
       
+  }
+
+  if(redirect){
+    return <Navigate to="/Profil" /> 
   }
 
   return (
@@ -111,8 +100,8 @@ function Connexion() {
 
                       <Form.Group className="mb-4" controlId="formBasicPassword">
                         <Form.Label>Mot de Passe</Form.Label>
-                        <Form.Control type="password" name="MotDePasse" placeholder="Password" required
-                          className={`${state.user.MotDePasse === "" ? "is-invalid" : "is-valid"}`}
+                        <Form.Control type="password" name="Mot_de_passe" placeholder="Password" required
+                          className={`${state.user.Mot_de_passe === "" ? "is-invalid" : "is-valid"}`}
                           onChange={updateInput}
                         />
                       </Form.Group>

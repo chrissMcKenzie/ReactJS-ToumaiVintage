@@ -16,7 +16,7 @@ const connectionOption = {
     database: "vintages_bases",
     user:"root",
     password: "",
-    port: 3306
+    port: 3307
 }
 
 mysql.createConnection(connectionOption)
@@ -46,8 +46,8 @@ mysql.createConnection(connectionOption)
     })
 
     // Recupérer les données d'un utilisateur par id (profil)
-    app.get('/users/:id', async (req,res) => {
-        const responseDB = await db.query("SELECT * FROM users WHERE id = ? ",[req.params.id])
+    app.get('/User/:Email', async (req,res) => {
+        const responseDB = await db.query("SELECT * FROM users WHERE Email = ? ",[req.body.Email])
         res.json({status:200, responseDB})
     });
 
@@ -80,6 +80,10 @@ mysql.createConnection(connectionOption)
         const responseDB = await db.query("INSERT INTO ordered (id_users, id_products, Quantite, Price) VALUES (?,?,?,?)",[id_users, id_products, Quantite, Price])
         res.json({status:200,responseDB})
     })
+
+    // app.post('/Token/Create', userController.createToken)
+
+
 })
 
 app.listen(3000,() => {
