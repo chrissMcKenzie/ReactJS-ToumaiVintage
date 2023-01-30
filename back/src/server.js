@@ -70,14 +70,16 @@ mysql.createConnection(connectionOption)
         res.json({status:200,responseDB})
     })
     
-    // Enregistrer une commande
+    // Enregistrer une commande:
 
-    app.post('/ordered/add', async(req,res) => {
+      app.post('/ordered/add', async(req,res) => {
         const id_users = "1"
         const id_products =req.body.id_products
-        const Quantite =req.body.Quantite
+        const title = req.body.title
+        const image = req.body.image
         const Price=req.body.Price
-        const responseDB = await db.query("INSERT INTO ordered (id_users, id_products, Quantite, Price) VALUES (?,?,?,?)",[id_users, id_products, Quantite, Price])
+        const Quantite =req.body.Quantite
+        const responseDB = await db.query("INSERT INTO ordered (id_users, id_products, title, image, Quantite, Price) VALUES (?,?,?,?,?,?)",[id_users, id_products, title, image, Quantite, Price])
         res.json({status:200,responseDB})
     })
 })
@@ -85,3 +87,5 @@ mysql.createConnection(connectionOption)
 app.listen(3000,() => {
     console.log(`j'ecoute sur le port 3000`)
 })
+
+
