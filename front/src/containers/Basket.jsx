@@ -6,6 +6,7 @@ import axios from "axios"
 
 export default function Basket({cartItems, onAdd, onRemove}) {    
   // const [checked, setChecked] = useState(false);
+  console.log(cartItems)
   const [radioValue, setRadioValue] = useState('1');
   const [showAlert, setShowAlert] = useState(false);
   const radios = [
@@ -14,9 +15,58 @@ export default function Basket({cartItems, onAdd, onRemove}) {
     { name: 'Paypal', value: '3' },
   ];
 
+  const postFetch = async (body) => {
+    try {
+        await axios({
+          method: 'POST',
+          headers: { "Content-Type": "application/json" },
+          url: 'http://localhost:3000/ordered/add',
+          body: JSON.stringify(body)
+      });
+
+    } catch (error) {
+      console.log("POST error: ", error); 
+    }
+  };
+
   const hundleSubmitOrder = (e) =>{
     e.preventDefault()
     setShowAlert(true)
+    
+
+   
+    // let id
+    // let title
+    // let imgSrc
+    // let Price 
+    // let quantity
+    // cartItems.map((item) =>{
+      // id = item.id
+      // title = item.title
+      // imgSrc = item.imgSrc
+      // Price = item.Price
+      // quantity = item.quantity
+
+    // console.log(item.id)
+    // console.log(item.title)
+    // console.log(item.imgSrc)
+    // console.log(item.Price)
+    // console.log(item.quantity)
+
+
+    // })
+
+    // const theBody = {
+
+    //   id_users:  "1",
+    //   id_products: '1',
+    //   title: "taf",
+    //   image: "src/images",
+    //   Price: "10 ",
+    //   Quantite: "2"
+    // };
+    // postFetch(theBody);
+
     setTimeout(() => {
       window.location="http://127.0.0.1:5173/"     
     }, 3000);
@@ -28,22 +78,12 @@ export default function Basket({cartItems, onAdd, onRemove}) {
     const shippingPrice = itemsPrice >= 100 ? 0 : 10
     const totalPrice = itemsPrice + taxPrice + shippingPrice
 
-    useEffect(() => {
-      axios.get('/ordered/add')
-      .then(function (response) {
-        // en cas de réussite de la requête
-        console.log(response);
-      })
-      .catch(function (error) {
-        // en cas d’échec de la requête
-        console.log(error);
-      })
-    }, []);
+  
 
   return (
 
     <div className='row mt-5 container' style={{margin: "auto"}}>
-        <div className='col'>
+        <div className='col-7'>
             <div>{ cartItems.length === 0 && <p className='text-center fs-1'>Votre panier est vide</p> }</div>
             {cartItems.map((item) => (
                 <div key={item.id} className="row align-items-center m-3 basket_product" style={{borderRadius: "5px"}}>   
@@ -93,7 +133,7 @@ export default function Basket({cartItems, onAdd, onRemove}) {
 
         { cartItems.length !== 0 &&(
 
-          <aside className='col pt-4 pb-4' style={{ background:"rgb(234, 204, 129)", borderRadius: "5px" }}>
+          <aside className='col-5 pt-4 pb-4' style={{ background:"rgb(234, 204, 129)", borderRadius: "5px" }}>
             <form onSubmit={hundleSubmitOrder}>
               <h2>Méthode de Paiement</h2>
               <p>Type de Carte</p>
@@ -153,6 +193,5 @@ export default function Basket({cartItems, onAdd, onRemove}) {
 
     </div>
     
-
   )
 }
