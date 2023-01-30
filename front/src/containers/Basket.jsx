@@ -23,7 +23,7 @@ export default function Basket({cartItems, onAdd, onRemove}) {
 
   }
   const itemsPrice = cartItems.reduce(
-    (accumulator, currentValue) => accumulator + currentValue.price * currentValue.quantity, 0)
+    (accumulator, currentValue) => accumulator + currentValue.Price * currentValue.quantity, 0)
     const taxPrice = itemsPrice * 0.20
     const shippingPrice = itemsPrice >= 100 ? 0 : 10
     const totalPrice = itemsPrice + taxPrice + shippingPrice
@@ -54,7 +54,7 @@ export default function Basket({cartItems, onAdd, onRemove}) {
                     <button type='button' onClick={() => onRemove(item)} className="btn btn-danger"  style={{width: "50px"}}>-</button>
                   </div>
                   <div className='col-2'>
-                    {item.quantity} x {item.price.toFixed(2) /* le prix sera de deux chiffre après la virgule*/ }
+                    {item.quantity} x {item.Price.toFixed(2) /* le prix sera de deux chiffre après la virgule*/ }
                   </div>
                   <hr className='mt-2' />
                 </div>
