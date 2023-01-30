@@ -5,8 +5,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `products` (
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `title` varchar(50) NOT NULL,
-    `description` varchar(1000) NOT NULL,
-    `price` double NOT NULL,
+    `description` varchar(1500) NOT NULL,
+    `Price` double NOT NULL,
     `imgSrc` varchar(512) NOT NULL,
     `category` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -32,12 +32,14 @@ CREATE TABLE `users` (
 CREATE TABLE `ordered`( `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
     `id_users` INT, FOREIGN KEY (id_users) REFERENCES users(id),
     `id_products` INT, FOREIGN KEY (id_products) REFERENCES products(id),
+    `title` varchar(100) NOT NULL,
+    `Image` varchar(1000) NOT NULL,
     `Quantite` INT(10) NOT NULL,
     `Price` INT(10) NOT NULL,
     `Date_Commande` DATETIME DEFAULT CURRENT_TIMESTAMP 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `products` (`title`, `description`, `price`,`imgSrc`,`category`) VALUES
+INSERT INTO `products` (`title`, `description`, `Price`,`imgSrc`,`category`) VALUES
 ("Bureau 70","Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
 molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
 numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
