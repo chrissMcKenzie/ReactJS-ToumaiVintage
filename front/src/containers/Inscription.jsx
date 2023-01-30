@@ -18,9 +18,9 @@ function Inscription() {
   // const [email, setEmail] = useState("")
   // const [password, setPassword] = useState("")
 
-  const [confirmPassword, setConfirmPassword] = useState("")
+  // const [confirmPassword, setConfirmPassword] = useState("")
 
-  const [redirect, setRedirect] = useState(false)
+  // const [redirect, setRedirect] = useState(false)
 
   const [state, setState] = useState({
     user: {
@@ -46,20 +46,29 @@ function Inscription() {
   })
 
   const updateInput = (e) => {
-      setState({
+    // const value = e.target.value
+      setState(prev => {
         // ...state.user,
-           user: 
-              e.target.name !== "DateDeNaissance" ? (
-                {
-                  ...state.user, [e.target.name]: e.target.value
-                }
-              ) : (
-                {
-                  ...state.user, [e.target.name]: JSON.stringify(e.target.value)
-                }
-              )
-          
+          return { ...prev, user:  {
+            ...state.user, [e.target.name]: JSON.stringify(e.target.value)
+            // ...state.user, [e.target.name]: e.target.value.toString()
+            }
+          }
       })
+      // setState({
+      //   // ...state.user,
+      //      user: 
+      //         e.target.name !== "DateDeNaissance" ? (
+      //           {
+      //             ...prev, [e.target.name]: e.target.value
+      //           }
+      //         ) : (
+      //           {
+      //             ...state.user, [e.target.name]: value.toString()
+      //           }
+      //         )
+          
+      // })
   }
   const updateMatcher = (e) => {
     setMatcher({
