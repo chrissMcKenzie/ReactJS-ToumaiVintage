@@ -29,7 +29,7 @@ import DetailsProducts from './containers/DetailsProducts';
 
 
 const App = () => {
-  const [countProduct, setCountProduct] = useState("");
+  // const [countProduct, setCountProduct] = useState("");
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([])
@@ -45,7 +45,7 @@ const App = () => {
     }
     // Si non la quantité reste à 1
     else{
-      setCartItems([ ... cartItems, { ...product, quantity: 1}])
+      setCartItems([ ...cartItems, { ...product, quantity: 1}])
     }
     setCountCartItems(Number(countCartItems) + 1)
   }

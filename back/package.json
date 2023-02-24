@@ -17,5 +17,8 @@
     "nodemon": "^2.0.20",
     "promise-mysql": "^5.2.0",
     "react-router-dom": "^6.6.2"
+  },
+  "devDependencies": {
+    "jest": "^29.4.3"
   }
 }

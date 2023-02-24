@@ -19,8 +19,8 @@ const connectionOption = {
     port: 3307
 }
 
-mysql.createConnection(connectionOption)
 
+mysql.createConnection(connectionOption)
 .then(async(db) => {
     app.get('/',function(req, res) {
         res.json('Bien connecté')
@@ -84,8 +84,6 @@ mysql.createConnection(connectionOption)
     })
 
     // app.post('/Token/Create', userController.createToken)
-
-
 })
 
 app.listen(3000,() => {
