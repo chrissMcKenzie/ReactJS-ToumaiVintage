@@ -13,7 +13,6 @@ const AppHeader = ({countCartItems}) => {
     <header>
         <section>
             <div className="AppLogo">
-
                 <Link to="/">
                     <img src={logoToumaï} style={{width:"100%", borderRadius: 45}} alt="logo Toumai"/>
                 </Link> 
@@ -26,7 +25,6 @@ const AppHeader = ({countCartItems}) => {
                 <p className="text-light">Produits Électronique Vintage</p>
                 {/* { user && <h2>Bonjour {user.nom}</h2>} */}
             </div>
-            <div data-testid="index-0">Hello World</div>
         </section>
         <section>
             <div className="ButtonConnexion">
@@ -43,7 +41,3 @@ const AppHeader = ({countCartItems}) => {
 }
 
 export default AppHeader;
-
-
- 
-  

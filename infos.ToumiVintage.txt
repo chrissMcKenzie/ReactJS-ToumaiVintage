@@ -32,6 +32,9 @@ npm install bootstrap react-bootstrap
 - https://www.youtube.com/watch?v=gEMAZSO85KY
 - https://www.youtube.com/watch?v=U07wzhfu66M
 
+[Docker]
+- https://stackoverflow.com/questions/65456814/docker-apple-silicon-m1-preview-mysql-no-matching-manifest-for-linux-arm64-v8
+
 [PROCESS GIT]
 À la racine du projet
 git status

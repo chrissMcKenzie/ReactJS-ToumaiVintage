@@ -1,9 +1,10 @@
 const express = require('express')
 const app = express()
 const mysql = require('promise-mysql')
-
+const dotenv = require('dotenv')
 const cors = require('cors')
 app.use(cors())
+dotenv.config()
 
 //const bodyParser = require('body-parser')
 //app.use(bodyParser.urlencoded({ extended: false}))
@@ -12,11 +13,11 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 
 const connectionOption = {
-    host: "localhost",
-    database: "vintages_bases",
-    user:"root",
-    password: "",
-    port: 3307
+    host: process.env.MYSQL_HOST_IP, //"localhost",
+    port: process.env.MYSQL_PORT, //3307,
+    user: process.env.MYSQL_USER, //"root",
+    password: process.env.MYSQL_PASSWORD, //"",
+    database: process.env.MYSQL_DATABASE //"vintages_bases",
 }
 
 
@@ -86,8 +87,8 @@ mysql.createConnection(connectionOption)
     // app.post('/Token/Create', userController.createToken)
 })
 
-app.listen(3000,() => {
-    console.log(`j'ecoute sur le port 3000`)
+app.listen(process.env.REACT_APP_SERVER_PORT,() => {
+    console.log(`j'ecoute sur le port ${process.env.REACT_APP_SERVER_PORT}`)
 })
 
 
