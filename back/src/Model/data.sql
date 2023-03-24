@@ -74,7 +74,7 @@ obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam",100
 molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
 numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
 optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam",50,"../src/media/images/iamges.jpeg","Téléphones"),
+obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam",50,"../src/media/images/images.jpeg","Téléphones"),
 ("Fixe retro","Thundercats iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
 molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
 numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
