@@ -7,11 +7,11 @@ config
 coverage
 node_modules
 docker-compose.dev.yml
-# docker-compose.prod.yml
-docker-compose.yml
-Dockerfile
+docker-compose.prod.yml
+# docker-compose.yml
+# Dockerfile
 Dockerfile.dev
-# Dockerfile.prod
+Dockerfile.prod
 Makefile
 Readme.md
 tests

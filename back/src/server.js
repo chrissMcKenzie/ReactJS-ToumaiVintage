@@ -12,16 +12,22 @@ dotenv.config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 
-const connectionOption = {
-    host: process.env.MYSQL_HOST_IP, //"localhost",
-    port: process.env.MYSQL_PORT, //3307,
-    user: process.env.MYSQL_USER, //"root",
-    password: process.env.MYSQL_PASSWORD, //"",
-    database: process.env.MYSQL_DATABASE //"vintages_bases",
-}
+// const connectionOption = {
+//     host: process.env.MYSQL_HOST_IP, //"localhost",
+//     port: process.env.MYSQL_PORT, //3307,
+//     user: process.env.MYSQL_USER, //"root",
+//     password: process.env.MYSQL_PASSWORD, //"",
+//     database: process.env.MYSQL_DATABASE //"vintages_bases",
+// }
 
 
-mysql.createConnection(connectionOption)
+// mysql.createConnection(connectionOption)
+mysql.createPool({
+    host: process.env.MYSQL_HOST_IP,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+  })
 .then(async(db) => {
     app.get('/',function(req, res) {
         res.json('Bien connecté')

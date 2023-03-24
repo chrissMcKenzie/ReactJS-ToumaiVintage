@@ -1,29 +1,26 @@
 version: "3.4"
 
 x-common-variables: &common-variables
-  MYSQL_USER: root
-  MYSQL_PASSWORD: root
-  MYSQL_DATABASE: vintages_bases
+  MYSQL_USER: sampleuser
+  MYSQL_PASSWORD: samplepassword
+  MYSQL_DATABASE: sampledb
   REACT_APP_SERVER_PORT: 3000
 
 services:
   mysql-db:
-    platform: linux/amd64 #! docker pull --platform linux/x86_64 mysql
-    # platform: linux/x86_64 #! docker pull --platform linux/x86_64 mysql
-    # image: mysql:8 #! ERROR: no matching manifest for linux/arm64/v8 in the manifest list entries
-    image: mysql:5.7 #! ERROR: no matching manifest for linux/arm64/v8 in the manifest list entries
-    # image: mariadb
+    platform: linux/x86_64/v8 #! docker pull --platform linux/x86_64 or linux/x86_64/v8 mysql
+    image: mysql:5.7 #! ERROR: no matching manifest for linux/amd64 or linux/amd64/v8 or linux/arm64/v8 in the manifest list entries
 
     container_name: mysql_container_toumaivintage
     environment:
       <<: *common-variables
       MYSQL_HOST: localhost
-      MYSQL_ROOT: root
+      MYSQL_ROOT_PASSWORD: root
     ports:
       - 3306:3306
     restart: unless-stopped
     volumes:
-      - ./back/src/Model/vintages_bases.sql:/docker-entrypoint-initdb.d/vintages_bases.sql
+      - ./db/sample.sql:/docker-entrypoint-initdb.d/sample.sql
   phpmyadmin:
     depends_on:
       - mysql-db
@@ -36,10 +33,9 @@ services:
     ports:
       - 8080:80
     restart: always
-  back:
+  server:
     build: ./back
-    container_name: backend_container_toumaivintage
-    # image: node:19
+    container_name: back_container_toumaivintage
     depends_on:
       - mysql-db
     environment:
@@ -52,17 +48,16 @@ services:
     links:
       - mysql-db
     command: npm start
-  front:
+  client:
     build: ./front
-    container_name: frontend_container_toumaivintage
-    # image: node:19
+    container_name: front_container_toumaivintage
     environment:
       <<: *common-variables
       NODE_PATH: src
     ports:
       - 5173:5173
     volumes:
-      - ./front/src:/app
+      - ./front/src:/app/src
     links:
-      - back
-    command: sh -c "npm install && npm start"
+      - server
+    command: npm start

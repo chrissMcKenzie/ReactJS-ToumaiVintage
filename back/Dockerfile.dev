@@ -1,6 +1,6 @@
 FROM node:19
 WORKDIR /back
-COPY package.json .
+COPY package.json /AppToumaiVintage
 RUN npm install
-COPY ..
+COPY . /AppToumaiVintage
 CMD ["npm", "start"]

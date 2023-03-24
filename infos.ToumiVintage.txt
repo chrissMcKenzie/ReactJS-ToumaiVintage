@@ -35,6 +35,40 @@ npm install bootstrap react-bootstrap
 [Docker]
 - https://stackoverflow.com/questions/65456814/docker-apple-silicon-m1-preview-mysql-no-matching-manifest-for-linux-arm64-v8
 
+- Commandes
+docker image ls
+docker volume
+docker volume create my volume
+docker volume list
+docker network ls
+docker network inspect bridge
+docker network create my-network
+docker network connect my-network my-apline-container
+docker network inspect my-network
+
+docker run -d -p 8087:80 nginx
+docker ps
+docker stats
+
+- Créer une image docker
+docker build -t learnbook/devapps:1.0 -f ./WebApplicaion1/Dockerfile .
+docker run -p 8092:80 learnbook/devapps:1.0
+docker image ls
+- docker push learnbook/devapps:tagname
+docker push learnbook/devapps:1.0
+
+docker-compose down
+
+- 
+docker login
+docker push
+
+[Kubernetes]
+kubectl apply -f ./deplay.yml
+kubectl get svc
+kubectl get pods
+
+
 [PROCESS GIT]
 À la racine du projet
 git status
